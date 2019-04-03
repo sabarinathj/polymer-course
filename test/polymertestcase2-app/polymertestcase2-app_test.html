@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymertestcase2-app test</title>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script src="../../node_modules/wct-mocha/wct-mocha.js"></script>
+
+    <script type="module" src="../../src/polymertestcase2-app/polymertestcase2-app.js"></script>
+    <script type="module" src="../../src/polymertestcase2-app/login-course.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture"> <!-- fixtire give instance of shadow element -->
+      <template>
+        <polymertestcase2-app></polymertestcase2-app> <!-- import in head tag and define here -->
+      </template>
+    </test-fixture>
+
+    <test-fixture id="loginTestFixture"> <!-- fixtire give instance of shadow element -->
+      <template>
+        <login-course></login-course> <!-- import in head tag and define here -->
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ChangedPropertyTestFixture">
+      <template>
+        <polymertestcase2-app prop1="new-prop1"></polymertestcase2-app>
+      </template>
+    </test-fixture>
+
+
+    <script>
+      /*suite('polymer testcase', function(){
+        test('should return correct testcase name', function(){
+          var element = fixture('BasicTestFixture');
+          assert.equal(element.useCaseName, 'Sabarinath Courses', 'My first test case passed');
+        });
+      });*/
+      describe('polymer testcase', function(){
+        var element, elementShadowRoot;
+        
+        beforeEach(function() {
+          // runs before each test in this block
+          element = fixture('loginTestFixture');
+          elementShadowRoot = element.shadowRoot;
+        });
+        //var element = fixture('BasicTestFixture');  
+        /*
+        it('should return correct testcase name', function(){
+          var element = fixture('BasicTestFixture');
+          assert.equal(element.useCaseName, 'Sabarinath Courses!', 'My first test case passed');
+          assert.isString(element.useCaseName);
+        });
+        it('should return type check of property', function(){
+          var element = fixture('BasicTestFixture');
+          assert.isArray(element.useCaseName);
+        });
+        it('should check session storage', function(){
+          var element = fixture('BasicTestFixture');
+          assert.equal(sessionStorage.length, 0);
+        });
+        */
+        /*
+        it('should be able to access ', function(){
+          var element = fixture('BasicTestFixture');
+          var elementShadowRoot = element.shadowRoot;
+          //var elementValue = elementShadowRoot.querySelector('.navbar-brand');
+          //assert.equal(elementValue.innerHTML, 'Sabarinath Courses!');
+          expect(elementShadowRoot.querySelector('.navbar-nav template:nth-child(1)')).to.have.attribute('if').match(false);
+          var checkAttr = elementShadowRoot.querySelector('.navbar-nav template:nth-child(1)').getAttribute("if");
+           
+          assert.exists(checkAttr);
+        });
+        */
+        it('should login', function(){
+         
+          //assert.loginBtn.click();
+          elementShadowRoot.querySelector('#userName').value = "sabarinathj@gmail.com" ;
+          elementShadowRoot.querySelector('#passWord').value = "123456" ;
+          elementShadowRoot.querySelector('#loginBtn').click() ;
+          
+          
+          //assert.isEmpty(loginElement, 'it is empty');
+          /*
+          stub('paper-button', {
+            click: function() {
+              console.log('paper-button.click called');
+              var loginElement = elementShadowRoot.querySelector('#userName') ;
+              assert.isEmpty(loginElement, 'it is empty');
+            }
+          });
+          */   
+        });
+        /*
+        it('should send request for login', function(){
+
+        });
+        */
+      });
+    
+      /*
+      suite('polymertestcase2-app', function() {
+
+        test('instantiating the element with default properties works', function() {
+          var element = fixture('BasicTestFixture'); 
+          assert.equal(element.prop1, 'polymertestcase2-app');
+          var elementShadowRoot = element.shadowRoot;
+          var elementHeader = elementShadowRoot.querySelector('h2');
+          assert.equal(elementHeader.innerHTML, 'Hello polymertestcase2-app!');
+        });
+
+        test('setting a property on the element works', function() {
+          // Create a test fixture
+          var element = fixture('ChangedPropertyTestFixture'); // takes fixture with matching provided ID 
+		  //var elementShadowRoot = element.shadowRoot;
+          assert.equal(element.useCaseName, 'Sabarinath Courses');
+          var elementShadowRoot = element.shadowRoot; // to access shadow DOM of shadow Root
+          var elementHeader = elementShadowRoot.querySelector('h2'); //selecting required html tag
+          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!'); // checking data inside selected tag using innerhtml with excepted output
+        });
+
+      });
+      */
+     /*
+      suite('iron ajax request', function() {
+        var ajax;
+        var request;
+        var server;
+        var responseHeaders = {
+          json: { 'Content-Type': 'application/json' }
+        };
+        setup(function() {
+          server = sinon.fakeServer.create();
+          server.respondWith(
+            'GET', [
+              200,
+              responseHeaders.json,
+              '{"success":true}'
+            ]
+          );
+        });
+        teardown(function() {
+          server.restore();
+        });
+        suite('when making simple GET requests for JSON', function() {
+          setup(function() {
+            // get fresh instance of iron-ajax before every test
+            ajax = fixture('simple-get');
+          });
+          test('has sane defaults that love you', function() {
+            request = ajax.generateRequest();
+            server.respond();
+            expect(request.response).to.be.ok;
+            expect(request.response).to.be.an('object');
+            expect(request.response.success).to.be.equal(true);
+          });
+          test('has the correct xhr method', function() {
+            request = ajax.generateRequest();
+            expect(request.xhr.method).to.be.equal('GET');
+          });
+        });
+      });
+      */
+    </script>
+
+
+  </body>
+</html>

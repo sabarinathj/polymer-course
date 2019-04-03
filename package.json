@@ -1,0 +1,38 @@
+{
+  "name": "polymertestcase2",
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.2",
+    "@polymer/app-route": "^3.0.2",
+    "@polymer/app-storage": "^3.0.2",
+    "@polymer/iron-ajax": "^3.0.1",
+    "@polymer/iron-form": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/neon-animation": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/paper-dialog": "^3.0.1",
+    "@polymer/paper-dialog-behavior": "^3.0.1",
+    "@polymer/paper-dialog-scrollable": "^3.0.1",
+    "@polymer/paper-dropdown-menu": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.2",
+    "@polymer/paper-input": "^3.0.1",
+    "@polymer/paper-item": "^3.0.1",
+    "@polymer/paper-listbox": "^3.0.1",
+    "@polymer/paper-radio-button": "^3.0.1",
+    "@polymer/paper-radio-group": "^3.0.1",
+    "@polymer/polymer": "^3.0.0",
+    "@vaadin/vaadin-accordion": "^1.0.0",
+    "@vaadin/vaadin-crud": "^1.0.1",
+    "@vaadin/vaadin-form-layout": "^2.1.2",
+    "@vaadin/vaadin-grid": "^5.3.3",
+    "web-animations-js": "^2.3.1"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "wct-mocha": "^1.0.0"
+  }
+}
